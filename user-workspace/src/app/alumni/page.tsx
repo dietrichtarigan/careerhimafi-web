@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/layout/Navbar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -59,9 +58,7 @@ export default function AlumniPage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-      
+    <>
       {/* Header */}
       <section className="bg-black text-white py-12">
         <div className="container mx-auto max-w-6xl px-4">
@@ -197,6 +194,6 @@ export default function AlumniPage() {
           </Button>
         </div>
       </section>
-    </main>
+    </>
   )
 }

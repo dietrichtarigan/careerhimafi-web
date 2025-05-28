@@ -49,9 +49,7 @@ export default function Home() {
   ]
 
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-      
+    <>
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-black text-white">
         <div className="container mx-auto max-w-6xl">
@@ -128,6 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   )
 }

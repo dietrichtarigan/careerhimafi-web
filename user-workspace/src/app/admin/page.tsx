@@ -1,20 +1,34 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { loginAdmin } from "@/lib/auth"
+import { toast } from "sonner"
 
 export default function AdminLogin() {
+  const router = useRouter()
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   })
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement authentication
-    console.log("Login attempt:", credentials)
+    setIsLoading(true)
+
+    try {
+      await loginAdmin(credentials.email, credentials.password)
+      router.push("/admin/dashboard")
+    } catch (error) {
+      toast.error("Invalid credentials. Please try again.")
+      console.error("Login error:", error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (

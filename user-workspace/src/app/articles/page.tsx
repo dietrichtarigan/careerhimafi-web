@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/layout/Navbar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select } from "@/components/ui/select"
@@ -68,9 +67,7 @@ export default function ArticlesPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-      
+    <>
       {/* Header */}
       <section className="bg-black text-white py-12">
         <div className="container mx-auto max-w-6xl px-4">
@@ -145,6 +142,6 @@ export default function ArticlesPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   )
 }

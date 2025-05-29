@@ -79,7 +79,6 @@ export function EventCalendar({ events, className = "" }: EventCalendarProps) {
 
     // Add cells for each day of the month
     for (let day = 1; day <= daysInMonth; day++) {
-      const currentDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day)
       const dayEvents = currentMonthEvents.filter(
         event => new Date(event.date).getDate() === day
       )
@@ -93,7 +92,7 @@ export function EventCalendar({ events, className = "" }: EventCalendarProps) {
         >
           <div className="font-medium text-sm mb-1">{day}</div>
           <div className="space-y-1">
-            {dayEvents.map((event, index) => (
+            {dayEvents.map((event) => (
               <div
                 key={event.id}
                 className="text-xs bg-blue-100 text-blue-800 rounded px-1 py-0.5 truncate"

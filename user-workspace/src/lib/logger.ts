@@ -149,7 +149,7 @@ class Logger {
     }
   }
 
-  private log(message: string, options: Required<LogOptions>) {
+  private log(message: string, options: LogOptions) {
     const { level, context, tags } = options
     const timestamp = new Date().toISOString()
 

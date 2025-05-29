@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import type { Article, Opportunity, Alumni } from "@/lib/types"
 
 type SearchResult = {
   id: string
@@ -52,26 +51,26 @@ export function Search({ placeholder = "Search...", className = "" }: SearchProp
       // For now, we'll simulate a search with a timeout
       await new Promise(resolve => setTimeout(resolve, 500))
 
-      // Mock results
+      // Mock results with explicit typing
       const mockResults: SearchResult[] = [
         {
           id: "1",
           title: "Career Paths in Quantum Computing",
-          type: "article",
+          type: "article" as const,
           subtitle: "Article • 5 min read",
           url: "/articles/career-paths-quantum-computing"
         },
         {
           id: "2",
           title: "Summer Research Internship at CERN",
-          type: "opportunity",
+          type: "opportunity" as const,
           subtitle: "Internship • Deadline: May 30, 2024",
           url: "/opportunities/cern-summer-research"
         },
         {
           id: "3",
           title: "Dr. Sarah Chen",
-          type: "alumni",
+          type: "alumni" as const,
           subtitle: "Quantum Computing Researcher at IBM",
           url: "/alumni/sarah-chen"
         }

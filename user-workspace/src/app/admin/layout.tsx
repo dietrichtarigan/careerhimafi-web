@@ -10,7 +10,6 @@ export default function AdminLayout({
 }) {
   const router = useRouter()
   const pathname = usePathname()
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -18,7 +17,6 @@ export default function AdminLayout({
     const checkAuth = () => {
       // Simulate auth check
       const isLoggedIn = localStorage.getItem("adminToken")
-      setIsAuthenticated(!!isLoggedIn)
       setIsLoading(false)
 
       // Redirect if not authenticated and trying to access dashboard

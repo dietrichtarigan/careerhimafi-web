@@ -13,8 +13,6 @@ import { toast } from "sonner"
 
 export default function AdminDashboard() {
   const router = useRouter()
-  const [selectedTab, setSelectedTab] = useState("opportunities")
-
   const handleLogout = () => {
     try {
       logoutAdmin()
